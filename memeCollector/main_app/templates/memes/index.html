@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>All Memes</h1>
+
+{% for meme in memes %}
+<a href="{% url 'detail' meme.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ meme.name }}</span>
+            <p>Description: {{ meme.description }}</p>
+            <p>Author: {{ meme.author }}</p>
+            <p>Created: {{ meme.date }}</p>
+        </div>
+    </div>
+</a>
+{% endfor %}
+
+{% endblock %}
